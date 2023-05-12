@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Mission;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -21,16 +23,16 @@ class MissionCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')->hideOnForm(),
+            IntegerField::new('id')->hideOnForm(),
             TextField::new('job'),
             TextField::new('company'),
             TextField::new('localization'),
             TextField::new('contract'),
             TextField::new('duration'),
-            TextField::new('salary'),
+            IntegerField::new('salary'),
             TextField::new('description'),
             BooleanField::new('isAccept'),
-            DateTimeField::new('startDate'),
+            DateField::new('startDate'),
             DateTimeField::new('endDate'),
         ];
     }

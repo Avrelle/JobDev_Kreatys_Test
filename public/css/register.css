@@ -1,0 +1,16 @@
+:root{
+    --color: #316887;
+}
+.square-box{
+    max-width: 450px;
+    min-height: 300px;
+    background: #316887;
+    border-radius: 50px;
+    
+}
+.title{
+    color: var(--color)
+}
+.btn {
+    background: var(--color);
+}

@@ -6,6 +6,7 @@ use App\Entity\Developer;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 
@@ -26,7 +27,7 @@ class DeveloperCrudController extends AbstractCrudController
             TextField::new('email'),
             TextField::new('adress'),
             CollectionField::new('Roles'),
-            TextField::new('description'),
+            TextareaField::new('description'),
             TextField::new('skill'),
 
             

@@ -1,0 +1,16 @@
+.offerTitle{
+    color: var(--color);
+}
+.footerBgOffer{
+    
+    background: #316887;
+    position:relative;
+    width:100%;
+    
+}
+li {
+    word-break: break-all;
+}
+ul {
+    list-style : none;
+  }

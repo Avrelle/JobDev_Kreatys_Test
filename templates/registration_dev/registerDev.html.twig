@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
-
+{% block stylesheets %}
+    <link rel = "stylesheet" href = "{{asset ("css/register.css")}}">
+{% endblock %}
 {% block body %}
 <h2 class="text-center mt-5 title">Inscrption</h2>
         <div class="container square-box d-flex justify-content-center align-items-center p-5">
@@ -31,7 +33,7 @@
             <div class="form-group mx-sm-3 mb-4">    
                 {{ form_widget(registrationForm.skill, {'attr' : {'placeholder': 'Compétences', 'class' : 'form-control'}})}}        
             </div>
-                <button type="submit" class="btn btn text-white">Register</button>
+                <button type="submit" class="btn btn text-white">Valider</button>
             {{ form_end(registrationForm) }}
         
         </div>  

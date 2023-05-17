@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DevProfilController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel = "stylesheet" href = "{{asset ("offer.css")}}">
+{% endblock %}
+{% block body %}
+    {% if is_granted("ROLE_CLIENT") %}
+        <h1 class="offerTitle ms-5 mt-3" style="color : #316887">Dev Profiles</h1>
+        <div class="container" style=" white-space: break-word">
+            <div class="row gx-1">
+                {% for dev in devProfils %}
+                    <div class="col-md-6 bg-body-tertiary rounded mb-3  p-3 text-decoration-none offerBlock" style=" box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
+                        <ul>   
+                            <li>{{dev.name}} {{dev.firstName}}</li>
+                            <li>Adress : {{dev.adress}}</li>
+                            <li>Téléphone : {{dev.phone}}</li>
+                            <li>Compétences : {{dev.skill}}</li>
+                            <li>Description : {{dev.description}}</li>
+                      
+                        </ul>
+                        
+ 
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <footer class="footerBgOffer" class="py-5">
+                <div class="container text-light text-center">
+                    <p class="display-5 mb-3">JobDev</p>
+                    <small class="text-white-50">&copy; Copright by Me. All rights reserved</small>
+                </div>
+            </footer>
+    {% endif %}        
+{% endblock %}

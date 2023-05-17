@@ -14,7 +14,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RegistrationDevController extends AbstractController
 {
-    #[Route('/register_dev', name: 'app_register')]
+    #[Route('/register_dev', name: 'app_register_dev')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new Developer();

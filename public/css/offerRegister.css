@@ -1,16 +1,16 @@
 :root{
     --color: #316887;
 }
-.square-boxlog{
-    max-width: 905px;
-    min-height: 200px;
+.square-boxOffer{
+    max-width: 350px;
+    min-height: 300px;
     background: #316887;
-    border-radius: 50px;
+    border-radius: 21px;
     
 }
-.titlelog{
+.title{
     color: var(--color)
 }
-.btnlog{
+.btn {
     background: var(--color);
 }

@@ -37,9 +37,6 @@ class Mission
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
-    private ?bool $isAccept = null;
-
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $startDate = null;
 
@@ -146,18 +143,6 @@ class Mission
         return $this;
     }
 
-    public function isIsAccept(): ?bool
-    {
-        return $this->isAccept;
-    }
-
-    public function setIsAccept(bool $isAccept): self
-    {
-        $this->isAccept = $isAccept;
-
-        return $this;
-    }
-
     public function getStartDate(): ?\DateTimeInterface
     {
         return $this->startDate;
@@ -220,4 +205,6 @@ class Mission
 
         return $this;
     }
+
+   
 }

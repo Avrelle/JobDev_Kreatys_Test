@@ -17,12 +17,12 @@
           <h4 class="mb-3">({{app.user.companyName}})</h4>
         {% endif %}
         <p> <i class="fa-regular fa-envelope"></i>  {{app.user.email}} </p>
-        <p><i class="fa-solid fa-location-dot"></i>  {{app.user.adress}}</p>
-        <p><i class="fa-solid fa-phone"></i>  {{app.user.phone}}</p>
+        <p> <i class="fa-solid fa-location-dot"></i>  {{app.user.adress}}</p>
+        <p> <i class="fa-solid fa-phone"></i>  {{app.user.phone}}</p>
         {% if is_granted("ROLE_DEV") %}
           <h4>Compétences :</h4>
           <p class="mb-3">{{app.user.skill}}</p>
-          <h4>Descrption :</h4>
+          <h4> Descrption : </h4>
           <p class="mb-3">{{app.user.description}}</p>
         {% endif %}
      </div>

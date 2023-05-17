@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OfferController!{% endblock %}
+{% block stylesheets %}
+    <link rel = "stylesheet" href = "{{asset ("offer.css")}}">
+{% endblock %}
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+    {% if is_granted("ROLE_DEV") %}
+        <h1 class="offerTitle ms-5 mt-3" style="color : #316887">Offres</h1>
+        <div class="container" style=" white-space: break-word">
+            <div class="row gx-1">
+                {% for mission in missions %}
+                    <div class="col-md-6 bg-body-tertiary rounded mb-3 ms-3 p-3 text-decoration-none offerBlock" style=" box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;" >
+                        <ul>   
+                            <li> Poste : {{mission.job}}</li>
+                            <li> Entreprise : {{mission.company}}</li>
+                            <li> Ville : {{mission.localization}}</li>
+                            <li> Contract : {{mission.contract}}</li>
+                            <li> Temps : {{mission.duration}}</li>
+                            <li> salaire à l'année : {{mission.salary}} €</li>
+                            <li > Description du poste : {{mission.description}}</li>
+                            <li> Début : {{mission.startDate|date('d-m-Y') }}</li>
+                            <li> Fin : {{mission.endDate|date('d-m-Y') }}</li>
+                        </ul>
+                        <button type="button" class="btn btn-success flex-inverse">Postuler</button>
+ 
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <footer class="footerBgOffer" class="py-5">
+                <div class="container text-light text-center">
+                    <p class="display-5 mb-3">JobDev</p>
+                    <small class="text-white-50">&copy; Copright by Me. All rights reserved</small>
+                </div>
+            </footer>
+    {% endif %}        
+{% endblock %}
